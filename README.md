@@ -26,3 +26,7 @@ Mysql
 
 ![image](https://user-images.githubusercontent.com/50263561/123578013-93105f00-d7dd-11eb-88e8-84ede149e99c.png)
 
+  <h1>Register Page </h1>
+  
+  ![image](https://user-images.githubusercontent.com/50263561/123578842-5b0a1b80-d7df-11eb-80ea-6f3c086e1043.png)
+
