@@ -12,10 +12,10 @@ const homePage = () =>{
     
 
     const toArcade = ()=>{
-        window.location.replace("http://localhost:3000/arcadeRPS");;  
+        window.location.replace("http://localhost:3000/arcadeRPS");
     };
     const toStory = ()=>{
-        window.location.replace("http://localhost:3000/storyRPS");;  
+        window.location.replace("http://localhost:3000/storyRPS");
     };
 
 
