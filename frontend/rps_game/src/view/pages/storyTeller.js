@@ -25,14 +25,14 @@ const StoryTeller = () => {
 
   const [intro,setIntro] = useState(
      <div>
-      {/* <h3 id="continue-btn" className="story-txt">{story[0]}</h3>
+      <h3 id="continue-btn" className="story-txt">{story[0]}</h3>
       <h3 id="continue-btn" className="story-txt">{story[1]}</h3>
       <h3 id="continue-btn" className="story-txt">{story[2]}</h3>
       <h3 id="continue-btn" className="story-txt">{story[3]}</h3>
       <h3 id="continue-btn" className="story-txt">{story[4]}</h3>
       <h3 id="continue-btn" className="story-txt">{story[5]}</h3>
       <h3 id="continue-btn" className="story-txt">{story[6]}</h3>
-      <h3 id="continue-btn" className="story-txt">{story[7]}</h3> */}
+      <h3 id="continue-btn" className="story-txt">{story[7]}</h3>
       <BeginBtn handleClick={renderRegister} id="s" label="Yes"/>
     </div>);
 
