@@ -10,6 +10,10 @@ Nodejs
 Database
 Mysql
 
+<h1>Database Config<h1/>
+![image](https://user-images.githubusercontent.com/50263561/123581593-e934d080-d7e4-11eb-83e5-652e43d5e032.png)
+
+
 <h1>Arcade Gameplay<h1/>
 
 ![image](https://user-images.githubusercontent.com/50263561/123577931-678d7480-d7dd-11eb-8e7e-d9b5e1a4bab7.png)
