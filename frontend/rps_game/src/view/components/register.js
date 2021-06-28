@@ -13,7 +13,9 @@ export default class Register extends React.Component {
     msg:""
   };
 
-  
+  handleClose = ()=>{
+   document.getElementsByClassName('alert').style.display = "none";
+  };
   handleChangeName = (event) => {
     this.setState({ name: event.target.value });
   };
@@ -38,7 +40,11 @@ export default class Register extends React.Component {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-        this.setState({ msg: res.data.message })
+        if(!res.data.message){
+        this.setState({ msg: res.data.message });
+        }else{
+          this.setState({ msg: "You Reagistration was Succsessfull!" });
+        }
       })
       .catch((err)=>{
         console.log(err);
@@ -48,7 +54,7 @@ export default class Register extends React.Component {
   render() {
     return (
       <div className="login-box">
-        <ErrorMsg msg={this.state.msg}/>
+        <ErrorMsg msg={this.state.msg}/><br/>
         <h2>Register</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="user-box">

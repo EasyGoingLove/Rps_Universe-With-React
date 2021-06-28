@@ -8,6 +8,7 @@ import {
 
 
 import HomePage from './view/pages/home';
+import Login from './view/pages/login';
 import StoryTeller from './view/pages/storyTeller';
 import ArcadeRPS from './view/pages/arcadeRps';
 import NavMenu from './view/components/navMenu';
@@ -28,6 +29,10 @@ function App() {
 
      <Route path="/storyRPS" exact>
      <StoryTeller/>
+     </Route>
+
+     <Route path="/loginRps" exact>
+     <Login/>
      </Route>
 
      <Route path="/arcadeRPS" exact>

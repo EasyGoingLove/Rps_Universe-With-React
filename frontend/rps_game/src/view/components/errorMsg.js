@@ -6,9 +6,8 @@ import './errorMsg.css';
 const errorMsg = props =>{
 
     return(
-        <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>{props.msg}</strong>
+        <div className="alert">
+        <center><strong className="error-style">{props.msg}</strong></center>
         </div>
     );
 };

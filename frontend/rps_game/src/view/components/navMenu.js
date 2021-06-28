@@ -17,9 +17,9 @@ const navMenu = () =>{
                 
                 <ul id="menu">
                 <a href="/"><li>Home</li></a>
+                <a href="/loginRps"><li>Login</li></a>
+                <a href="/arcadeRPS"><li>Arcade</li></a>
                 <a href="#"><li>About</li></a>
-                <a href="#"><li>Info</li></a>
-                <a href="#"><li>Contact</li></a>
                 </ul>
             </div>
         </nav>
