@@ -27,6 +27,7 @@ export default class Register extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+  
 
     const user = {
       name: this.state.name,
@@ -34,8 +35,9 @@ export default class Register extends React.Component {
       rep_pass: this.state.rep_pass,
     };
 
+
     axios
-      .post(`http://localhost:5000/auth/rps_register`, { user })
+      .post('http://localhost:5000/auth/rps_register', { user })
       .then((res) => {
         console.log(res);
         console.log(res.data);

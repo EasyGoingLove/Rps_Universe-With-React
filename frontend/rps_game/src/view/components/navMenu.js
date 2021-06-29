@@ -1,8 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
+import userAuth from '../../auth/userAuth.js';
+import authNav from '../../auth/authNav.js';
 
 import './navMenu.css';
 
-const navMenu = () =>{
+const NavMenu = () =>{
+
+    
 
     return(
         <nav role="navigation">
@@ -17,7 +22,7 @@ const navMenu = () =>{
                 
                 <ul id="menu">
                 <a href="/"><li>Home</li></a>
-                <a href="/loginRps"><li>Login</li></a>
+                {authNav()}
                 <a href="/arcadeRPS"><li>Arcade</li></a>
                 <a href="#"><li>About</li></a>
                 </ul>
@@ -27,4 +32,4 @@ const navMenu = () =>{
 
 
 };
-export default navMenu;
+export default NavMenu;

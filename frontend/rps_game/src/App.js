@@ -6,12 +6,14 @@ import {
   Switch
 } from 'react-router-dom';
 
+import ProtectedRoute from './auth/protectedRoute';
 
 import HomePage from './view/pages/home';
 import Login from './view/pages/login';
 import StoryTeller from './view/pages/storyTeller';
 import ArcadeRPS from './view/pages/arcadeRps';
 import NavMenu from './view/components/navMenu';
+
 
 
 
@@ -34,11 +36,18 @@ function App() {
      <Route path="/loginRps" exact>
      <Login/>
      </Route>
-
+   
      <Route path="/arcadeRPS" exact>
             <ArcadeRPS />
       </Route>
-    
+
+      <Route path="/profileRps" exact>
+            <ProtectedRoute />
+      </Route>
+
+      
+     
+     
       <Redirect to="/" />
 
      </Switch>
