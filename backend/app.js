@@ -5,7 +5,8 @@ import bodyParser from 'body-parser';
 import router from './routes/router.js';
 import authRouter from './routes/auth.js';
 import cors from 'cors';
-import flash from 'req-flash';
+import cookieParser from 'cookie-parser';
+import XML from 'xmlhttprequest';
 
 
 db.connect((err) => {
@@ -15,12 +16,28 @@ db.connect((err) => {
 
 const app = express();
 
+app.use(cookieParser());
 
-app.use(cors());
-app.use(session({secret: '{secret}', name: 'session_id', saveUninitialized: true, resave: true}));
-app.use(flash());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+  credentials: true
+}));
+
+// app.use(function(req, res, next) {
+//   res.header('Content-Type', 'application/json;charset=UTF-8')
+//   res.header('Access-Control-Allow-Credentials', true)
+//   res.header(
+//     'Access-Control-Allow-Headers',
+//     'Origin, X-Requested-With, Content-Type, Accept'
+//   )
+//   next()
+// })
+
+
 app.use(express.json());
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded());
+
 
 
 app.use('/',router);

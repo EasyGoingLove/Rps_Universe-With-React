@@ -3,36 +3,43 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 
+
 const login = async(req,res) => {
 
-    const secret = "asdas&%40assda3-913ia213-asodpk_(@i/#8";
-    const expire = "90d";
+ 
+
+    const secret = "asdhfghfas&";
+    const expire = '90d';
+    console.log(req.body.user);
     try {
-        const {email , pass} = req.body;
+        const {name , pass} = req.body.user;
   
-        if(!email || !pass){
+        if(!name || !pass){
            return res.status(200).send({message: 'Please enter Name or Password'});
         }
-        db.query('SELECT * FROM basicusers WHERE email = ?',[email],async(error,results) =>{
+        db.query('SELECT * FROM users WHERE name = ?',[name],async(error,results) =>{
           if(results ==false){
-              console.log("asdas");
-              return res.status(200).send({message: 'Use with such a Name does not exist.'}) 
+              return res.status(200).send({message: 'User with such a Name does not exist.'}) 
           }
-          
+
           if(!results || !(await bcrypt.compare(pass,results[0].password))){
             return res.status(200).send({message: 'Wrong Name or Password'}) 
           }else{
               const id = results[0].id;
-              const token = jwt.sign({id:id}, secret,{
+              const token = jwt.sign({id}, secret,{
                   expiresIn: expire
               });
              const cookieOptions ={
                   expires: new Date(
-                     Date.now() + expire * 24 *60 *60 *1000
+                     Date.now() + 90 * 24 *60 *60 *1000
                  ),
-                 httpOnly: true
-             }
+                 httpOnly: false //to be easaly read by js
+                 //if in prodyction set value to true for more security
+             } 
+             console.log(token,cookieOptions);
              res.cookie('jwt',token,cookieOptions);
+             res.header('Access-Control-Allow-Credentials', 'true');
+             res.status(200).send({message: 'Successfully Loged in.'})
           }
         })
     } catch (error) {
