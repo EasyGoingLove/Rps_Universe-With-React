@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 import axios from "axios";
-
+import userAuth from '../../auth/userAuth.js';
 import rock from "../../images/rock.svg";
 import sciccors from "../../images/sciccors.svg";
 import paper from "../../images/paper.svg";
@@ -60,11 +60,12 @@ const ArcadeRPS = (props) => {
 
   const ImageClick = (img, picked,value) => {
     setimage(
-      (picked_image = <img className="picked-option" src={img} alt={picked} value={value} />)
+      (picked_image = <img className="picked-option" value3={document.cookie.replace(/(^\d+)(.+$)/i,'$1')} value2={userAuth()} src={img} alt={picked} value={value} />)
     );
     setOptions("");
 
     sendGetRequest(url, picked_image);
+    console.log(userAuth());
 
     setCount(count_names[0]);
     let timesRun = 0;
@@ -108,7 +109,7 @@ const ArcadeRPS = (props) => {
             
          }
       }, 100);
-      
+
   }
   const reset = ()=>{
    document.getElementById('myModal').style.display = "none";
